@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Disciple Assistance</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source Sans Pro">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+      html {
+      scroll-behavior: smooth;
+    }
+    h1,h2,h3,h4,h5,h6 {font-family: "Roboto"}
+    body {font-family: "Source Sans Pro"}
+    </style>
+  </head>
+<body class="w3-light-white w3-margin">
+
+
+    <div
+    class="upperHeader"
+    style="display: flex; justify-content: space-between; align-items: center"
+  >
+  <div class="logo">
+    <img
+      src="http://localhost:3000/img/logo.png"
+      style="height: 150px; width: 150px"
+      alt=""
+    />
+  </div>
+    <div class="a" id="links"></div>
+    <script>
+      //check if the user has jwt token
+      if (localStorage.getItem("token")) {
+        //if the user has jwt token, then show the user name
+        document.getElementById(
+          "links"
+        ).innerHTML = `<a href="http://localhost:3000/user-profile" class="link">
+          <img height="40" width="40" src="http://localhost:3000/img/profile.jpg" alt="user" />
+          </a> <a href="http://localhost:3000/post-rentals" class="link">
+          <img height="40" width="40" src="http://localhost:3000/img/add.png" alt="user" />
+          </a>`;
+      } else {
+        //if the user doesn't have jwt token, then show the login button
+        document.getElementById(
+          "links"
+        ).innerHTML = `<a class='btn btn-sm btn-success' href="http://localhost:3000/login">Login</a> <a class='btn btn-sm btn-success' href="http://localhost:3000/register">Register</a>`;
+      }
+    </script>
+  </div>
+
+<!-- Navigation bar with links -->
+<div class="w3-bar w3-white w3-text-black">
+  
+    <a href="#Contact" class="w3-hide-small w3-bar-item w3-button w3-mobile w3-medium w3-right" style="margin-top:10px;">CONTACT</a>
+  <a href="#Trainers" class="w3-hide-small w3-bar-item w3-button w3-mobile w3-medium w3-right" style="margin-top:10px;">SERVICES</a>
+  <a href="#Home" class="w3-hide-small w3-bar-item w3-button w3-mobile w3-medium w3-right" style="margin-top:10px;">HOME</a>
+  <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-medium w3-hide-large" style="margin-top:10px;" onclick="myFunction()">&#9776;</a>
+</div>
+
+<div id="demo" width = "1000px" class="w3-bar-block w3-white w3-hide w3-hide-large w3-small">
+  <a href="#Home" class="w3-bar-item w3-button">Home</a>
+  <a href="#Trainers" class="w3-bar-item w3-button">SERVICES</a>
+  <a href="#Contact" class="w3-bar-item w3-button">CONTACT</a>
+</div>
+
+<!-- w3-content defines a container for fixed size centered content, 
+and is wrapped around the whole page content, except for the footer in this example -->
+<div class="w3-content" style="max-width:1600px">
+
+  <!-- Image header -->
+  <header class="w3-display-container w3-wide" style="padding-bottom:32px;" id="Home">
+    <img class="w3-image" src="http://localhost:3000/img/home.jpg" alt="Photo by Jamie Street" width="1600" height="1060">
+   
+  </header>
+
+  <!-- Grid / Trainers section -->
+  <div class="w3-row-padding" id="Trainers">
+    <div class="w3-center w3-padding-32">
+      <h2 class="w3-wide w3-center">Services</h2>
+         <p class="w3-white w3-text-black w3-left-align">
+          Disciple Assistance is a classified based brand that supports International Students from all over the world migrating to Montreal in seeking  high class education, bright future and settling in the Canadian environment.It is an collective platform that connects the real estate rentals sellers directly to the International students. Migrating to a new country is always a challenging part of life as a student.The very first question that came to mind when moving is “Where to stay…?? , Where will I live…..??”. For those who have some connections definitely get help but what about those who have to push themselves by their own in the burgeoning society. Some have to pay a lot for staying even for a few days. As all students are new and get trap in the brokerages and still didn't get that much support.So to overcome all these obstacles Disciple Assistance illuminates these challenges faced by the students.It connects the rentals owners and sellers directly to the students so that they can get a place of their choice within a cheaper price. It allows the users to post the advertisements and have the opportunity to connect.Not only rentals but it also deals in buying and selling the real estate properties Disciple Assistance is a local and environmentally beneficial approach to recycle items. Furthermore, because the connections are made between people who live nearby, you can always view, touch, and sample an item before you buy it..
+      </p>
+    </div>
+
+
+    <div class="w3-third w3-margin-bottom">
+      <div class="w3-card-4">
+        <img src="http://localhost:3000/img/immigration.jpeg" alt="Photo by Sam manns" style="width:100%">
+        <div class="w3-container">
+          <h3>Immigration Info</h3>
+          <p>Click below to find all the immigration related info including SP,PGWP,SIN,CAQ </p>
+          <p><button class="w3-button w3-round w3-pale-red w3-block"><a href="http://localhost:3000/immigration">Immigration</a></button></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="w3-third w3-margin-bottom">
+      <div class="w3-card-4">
+        <img src="http://localhost:3000/img/rental.jpg" alt="Photo by Manuel Meza" style="width:100%">
+        <div class="w3-container">
+          <h3>Rentals</h3>
+          <p>All the adds about the Rental and posting your own adds for the rents for the Lease Owners and givers </p>
+          <p><button class="w3-button w3-round w3-pale-red w3-block"><a href="http://localhost:3000/adds">Adds</a></button></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="w3-third w3-margin-bottom">
+      <div class="w3-card-4">
+        <img src="http://localhost:3000/img/jobs.png" alt="Photo by Wieger Stienstra" style="width:100%" >
+        <div class="w3-container">
+          <h3>Jobs</h3>
+          <p>All the part time and Full time Job postings will be in this section especially designed for the University and the college Students</p>
+          <p><button class="w3-button w3-round w3-pale-red w3-block"><a href="#Contact">Jobs</a></button></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Contact -->
+<div class="w3-white" id="Contact">
+  <div class="w3-container w3-padding-32">
+    <div class="w3-center w3-padding-32">
+<h2 class="w3-wide">CONTACT</h2>
+ <p class="w3-opacity"><i>Book now or just send us a message</i></p><br>
+
+      </div>
+<form action="/action_page.php" class ="contact" target="_blank">
+<p><input class="w3-input w3-padding-16 w3-border" type="text" id ="name" placeholder="Name" required name="Name"></p>
+<p><input class="w3-input w3-padding-16 w3-border" type="email" id ="email" placeholder="Email" required name="email1"></p>
+<p><input class="w3-input w3-padding-16 w3-border" type="text" id ="message" placeholder="Message" required name="Message"></p>
+<p><button class="w3-button w3-round w3-pale-red w3-block" type="submit">SEND MESSAGE</button></p>
+</form>
+</div>
+</div>
+
+    <!-- fetch jquery cdn -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.min.js"
+      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      //get the details from the fields and send a mail to the admin
+      $(".contact").submit(function (e) {
+        e.preventDefault();
+        var name = $("#name").val();
+        var email = $("#email").val();
+        var message = $("#message").val();
+        //send email using nodemailer
+        $.ajax({
+          url: "http://localhost:3000/contact",
+          type: "POST",
+          data: {
+            name: name,
+            email: email,
+            message: message,
+          },
+          success: function (data) {
+            alert("You will receive a confirmation email in a bit.");
+          },
+          error: function (err) {
+            alert("Error sending message");
+          },
+        });
+      });
+    </script>
+
+
+
+  <!-- Footer. This section contains an ad for W3Schools Spaces. You can leave it to support us. -->
+  <footer class="w3-container w3-pale-red w3-center w3-margin-top">
+    <p>Find us on social media.</p>
+    <i href="https://www.facebook.com" class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+  </footer>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("demo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+</script>
+
+</body>
+</html>

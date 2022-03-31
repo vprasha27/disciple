@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "zeta-surf-345623",
+  "private_key_id": "fbeec0e972bb1f1322761d8cda618e87aabbd6aa",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQCtgUldoR/YzkrZ\n/TrgE3Rqw1d2mqmPbAS3zyZ98Lim12mjU+HVxLudfhyhFUyXmzHnhOoAJLVQpbHk\nMWZYVNdYjIWgqQkkXZauhcuj1eZiY1//a9Zii84xMo7crl28+iM88Uwhnsge3VAG\nO6sYJUOdISg1VZZupo5voJ7gl+rz9BuvEMUPMUMihmvbcwchRMsKVtM/jlSHKlSd\nKBCu5EXKkYwzSDTmnS70gn+5KBahJ7k8DS/MEPXmCLKKnEms7/YauBgnMEQDVIi3\nskYYw7rVrBRJ/JHFfqt8JZt/qH4tHEh4/HBinapmQRYUK3Zj+eyeDgt+OpANNRac\nI4ONHyavAgMBAAECggEANsba9TrhtY6HdiPq+wRZXD14twKkJpoJMUiuk9M0UMQw\nXzaj1VvriZDflAGH8VM3YasGP25XafMt4uevspJyfEu9AlhrgPYlFMs72+kzd3t9\nOsP+ZpVRzxlxnf1Urc1g46Qgj3q0Hn5rfdRHs3NMUea+bXwsZpmh3V8d2bVMoaC4\n2Mm+jAaZRRfhceOvORD8c5VOM+0RiiPa6K3gI8AstEczVC5jOsPKJoi06d7EdF9c\nRbvhecjmmFOvDe1bkgp23YhqbzwrQVE/z8TsTscHVUN3DEN0hl9Xnfh4BW6TsV/H\n8nfuysqOyomEq65kVNXgB4Bb0lFAuTtRgBqizK5EYQKBgQDypIc+1qGNd5fzLIRY\nTo6nKQTbdMDxF5APoe2Ric3iPaY4XQozN7arFQjZhu8Zu98zs1jW27/4sDj3pGe/\nL0ZrWyKq0zVP2aXcGk14cOcoNlZ6bL7w2THkMmgXmY0Z7BDSYX0pRTcRT39szcmd\nBy0LE7CHRS2f9OXqvXEYNCJUzwKBgQC3Dm1ljzzG8BNBX5o0vlSynlFx2nzZEWpv\nfN+oWEaxZQr1EZRh5HZRwk1EvZtBSnh266d+4lfAmV2vXDZRBso2rmT0+DDxVfbx\nPyWjnEBx4VojVGdFoEbW8rvG5iFqZ2tfGZiKNb1viJhVWo/Aii/+x201GkWvcnae\nh6Vva6hIIQKBgQDQHjayuz2OLYnzVbeeVqMc1Z4I7begEunJvsYaEuy4pNAxf/wD\nukG/tCcHDSmAFRh5K9eDUrDyCZSTNDyYS2BHLMArbUVI3BHbG+Re7dgXMaQzFZsg\n0eptJJ8LvvS7yzMSf/PutiNpgZp2JHxNZ55G5fh/zeI4VMHv+dVLQUxBGQKBgQCv\nkszmXe4DOPye9R0ofW0rLKIdO1wHrqaRbAnwo0qalrlduJDDG6dIX75QsjMY+l50\nYS3zixBzkCXFLgKC0KperAH025/FuZfyZ4ioVhORpn0X6bprk4CeZY4pBU0Di1H2\nksw1s7mQIklJhGTgXSoPiiN6jUpNLtIK1zublHyBQQKBgQDJQtOnKJ5FONp4/RzV\nQOi3qUWkYxXFcnIy0/jvl4sGO17SX5JAnPh7nAVh/FTDx6QCDUkQSSkSxNonvahI\nQPWw3m+tnct/XpVGJWmBPQbBqqxCNnwNn60UGaO5XpEjKGH/O3avcN0Xixsc7ifC\nRvCjY7Pfxv9HxBr3yel35o+ExA==\n-----END PRIVATE KEY-----\n",
+  "client_email": "disciple-bucket-1@zeta-surf-345623.iam.gserviceaccount.com",
+  "client_id": "107237035955991715771",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/disciple-bucket-1%40zeta-surf-345623.iam.gserviceaccount.com"
+}

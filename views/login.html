@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+
+
+  <head>
+    <title>Disciple Assistance</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source Sans Pro">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <style>
+      html {
+      scroll-behavior: smooth;
+    }
+    h1,h2,h3,h4,h5,h6 {font-family: "Roboto"}
+    body {font-family: "Source Sans Pro"}
+    </style>
+  </head>
+<body class="w3-light-white w3-margin">
+
+
+    <div
+    class="upperHeader"
+    style="display: flex; justify-content: space-between; align-items: center"
+  >
+  <div class="logo">
+    <img
+      src="http://localhost:3000/img/logo.png"
+      style="height: 150px; width: 150px"
+      alt=""
+    />
+  </div>
+  <div class="a" id="links"></div>
+
+</div>
+ 
+
+<!-- Navigation bar with links -->
+<div class="w3-bar w3-white w3-text-black">
+  
+    <a href="#Contact" class="w3-hide-small w3-bar-item w3-button w3-mobile w3-medium w3-right" style="margin-top:10px;">CONTACT</a>
+  <a href="#Activities" class="w3-hide-small w3-bar-item w3-button w3-mobile w3-medium w3-right" style="margin-top:10px;">ACTIVITIES</a>
+  <a href="http://localhost:3000/" class="w3-hide-small w3-bar-item w3-button w3-mobile w3-medium w3-right" style="margin-top:10px;">SERVICES</a>
+  <a href="http://localhost:3000/" class="w3-hide-small w3-bar-item w3-button w3-mobile w3-medium w3-right" style="margin-top:10px;">HOME</a>
+  <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-medium w3-hide-large" style="margin-top:10px;" onclick="myFunction()">&#9776;</a>
+</div>
+
+<div id="demo" width = "1000px" class="w3-bar-block w3-white w3-hide w3-hide-large w3-small">
+  <a href="http://localhost:3000/" class="w3-bar-item w3-button">HOME</a>
+  <a href="http://localhost:3000/" class="w3-bar-item w3-button">SERVICES</a>
+  <a href="#Activities" class="w3-bar-item w3-button">ACTIVITIES</a>
+  <a href="#Contact" class="w3-bar-item w3-button">CONTACT</a>
+</div>
+
+<!-- w3-content defines a container for fixed size centered content, 
+and is wrapped around the whole page content, except for the footer in this example -->
+<div class="w3-content" style="max-width:1600px">
+
+
+<head>
+    <style>
+        body {
+            background-image: url('images_pic.jpeg');
+        }
+    </style>
+
+
+</head>
+<body>
+
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+
+
+
+    /* Full-width input fields */
+    input[type=text],
+    input[type=number],
+
+    input[type=password] {
+        width: 40%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        display: inline-block;
+        border: 1px solid #f1f1f1;
+        background: #f1f1f1;
+        text-align: center;
+    }
+
+    input[type=text]:focus,
+    input[type=number]:focus,
+
+    input[type=password]:focus {
+        background-color: #ddd;
+        outline: none;
+        text-align: center
+    }
+
+
+
+    /* Set a style for all buttons */
+    button {
+        background-color: #04AA6D;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 40%;
+        opacity: 0.9;
+        text-align: center
+    }
+
+    button:hover {
+        opacity: 1;
+        text-align: center;
+    }
+
+    .signupbtn {
+        float: center;
+        width: 30%;
+        text-align: center;
+    }
+
+    /* Add padding to container elements */
+    .container {
+        padding: 16px;
+        text-align: center
+    }
+
+    /* Clear floats */
+    .clearfix::after {
+        content: "";
+        clear: both;
+        display: table;
+        text-align: center
+    }
+</style>
+<script>
+  //check if the user has jwt token
+  if (localStorage.getItem("token")) {
+    //if the user has jwt token, then show the user name
+    document.getElementById(
+      "links"
+    ).innerHTML = `<a href="http://localhost:3000/user-profile" class="link">
+      <img src="http://localhost:5000/images/user.png" alt="user" />
+      </a> <a href="http://localhost:3000/register" class="link">
+      <img src="http://localhost:5000/images/cart.png" alt="user" />
+      </a>`;
+  } else {
+    //if the user doesn't have jwt token, then show the login button
+    document.getElementById(
+      "links"
+    ).innerHTML = `<a class='btn btn-sm btn-success' href="http://localhost:3000/login">Login</a> <a class='btn btn-sm btn-success' href="http://localhost:3000/register">Register</a>`;
+  }
+</script>
+
+<head>
+  <style>
+      body {
+          background-image: url('images_pic.jpeg');
+      }
+  </style>
+
+
+</head>
+<style>
+  body {
+      font-family: Arial, Helvetica, sans-serif;
+  }
+
+
+
+
+  /* Full-width input fields */
+  input[type=text],
+  input[type=password] {
+      width: 40%;
+      padding: 15px;
+      margin: 5px 0 22px 0;
+      display: inline-block;
+      border: 1px solid #f1f1f1;
+      background: #f1f1f1;
+      text-align: center;
+  }
+
+  input[type=text]:focus,
+  input[type=password]:focus {
+      background-color: #ddd;
+      outline: none;
+      text-align: center
+  }
+
+
+
+  /* Set a style for all buttons */
+  button {
+      background-color: #04AA6D;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 40%;
+      opacity: 0.9;
+      text-align: center
+  }
+
+  button:hover {
+      opacity: 1;
+      text-align: center;
+  }
+
+  .signupbtn {
+      float: center;
+      width: 30%;
+      text-align: center;
+  }
+
+  /* Add padding to container elements */
+  .container {
+      padding: 16px;
+      text-align: center
+  }
+
+  /* Clear floats */
+  .clearfix::after {
+      content: "";
+      clear: both;
+      display: table;
+      text-align: center
+  }
+</style>
+
+<head>
+    <style>
+        body {
+            background-image: url('images_pic.jpeg');
+        }
+    </style>
+
+
+</head>
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+
+
+
+    /* Full-width input fields */
+    input[type=text],
+    input[type=password] {
+        width: 40%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        display: inline-block;
+        border: 1px solid #f1f1f1;
+        background: #f1f1f1;
+        text-align: center;
+    }
+
+    input[type=text]:focus,
+    input[type=password]:focus {
+        background-color: #ddd;
+        outline: none;
+        text-align: center
+    }
+
+
+
+    /* Set a style for all buttons */
+    button {
+        background-color: #04AA6D;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 40%;
+        opacity: 0.9;
+        text-align: center
+    }
+
+    button:hover {
+        opacity: 1;
+        text-align: center;
+    }
+
+    .signupbtn {
+        float: center;
+        width: 30%;
+        text-align: center;
+    }
+
+    /* Add padding to container elements */
+    .container {
+        padding: 16px;
+        text-align: center
+    }
+
+    /* Clear floats */
+    .clearfix::after {
+        content: "";
+        clear: both;
+        display: table;
+        text-align: center
+    }
+</style>
+<script>
+    //check if the user has jwt token
+    if (localStorage.getItem("token")) {
+      //if the user has jwt token, then show the user name
+      document.getElementById(
+        "links"
+      ).innerHTML = `<a href="http://localhost:5000/app/profile" class="link">
+      <img src="http://localhost:5000/images/user.png" alt="user" />
+      </a> <a href="http://localhost:5000/app/cart" class="link">
+      <img src="http://localhost:5000/images/cart.png" alt="user" />
+      </a>`;
+    } else {
+      //if the user doesn't have jwt token, then show the login button
+      document.getElementById(
+        "links"
+      ).innerHTML = `<a class='btn btn-sm btn-success' href="http://localhost:3000/login">Login</a> <a class='btn btn-sm btn-success' href="http://localhost:3000/register">Register</a>`;
+    }
+  </script>
+
+
+
+
+<form action=""  method="get" style="border:1px solid #ccc">
+    <div class="container">
+        <h1>Login</h1>
+
+        <label for="email"><b></b></label>
+        <input type="text" placeholder="user Id " name ="email" id="email" required>
+        <br>
+
+
+        <label for="psw"><b></b></label>
+        <input type="password" placeholder=" Password" name="password" id="password" required>
+        <br>
+
+
+
+
+        <div class="clearfix">
+
+            <button type="submit" id="login">Login</button>
+        </div>
+        <h5 id="error"></h5>
+    </div>
+</form>
+<script>
+document.getElementById("login").addEventListener("click", function (e) {
+        e.preventDefault();
+
+        //get email and password from input
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+
+        //check if email and password are empty
+        if (email == "" || password == "") {
+          alert("Please enter email and password");
+        } else {
+          //if not empty, check if email and password are correct
+
+          //use fetch api to send data to server
+          fetch("http://localhost:3000/userr/login", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              email: email,
+              password: password,
+            }),
+          })
+            .then((res) => {
+              console.log(res);
+              /*if(userr.block === 1){
+                alert("You are blocked by the admin Please Contact the Admin");
+
+              }
+
+
+              else  */if (res.ok) {
+                return res.json();
+              } else {
+                throw new Error("Something went wrong");
+              }
+            })
+            .catch((err) => {
+
+              alert("Invalid Email/password Or Might be blocked by the Admin. Please contact the Admin");
+             /* document.getElementById("error").innerHTML =
+                "Invalid email or password"; */
+            })
+            .then((data) => {
+              localStorage.setItem("token", data.token);
+              localStorage.setItem("role", "userr");
+              window.location.href = "http://localhost:3000/";
+              console.log(data);
+            });
+        }
+      });
+    </script>
+
+</body>
+
+</html>

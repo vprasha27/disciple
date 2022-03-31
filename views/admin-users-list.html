@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel=“stylesheet” href=“https://www.w3schools.com/w3css/4/w3.css”>
+    <link rel=“stylesheet” href=“https://fonts.googleapis.com/css?family=Roboto”>
+    <link rel=“stylesheet” href=“https://fonts.googleapis.com/css?family=Source Sans Pro”>
+    <link rel=“stylesheet” href=“https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css”>
+
+    <title>Disciple Assistance</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source Sans Pro">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+      html {
+      scroll-behavior: smooth;
+    }
+    h1,h2,h3,h4,h5,h6 {font-family: "Roboto"}
+    body {font-family: "Source Sans Pro"}
+    </style>
+  </head>
+<body class="w3-light-white w3-margin">
+
+
+    <div
+    class="upperHeader"
+    style="display: flex; justify-content: space-between; align-items: center"
+  >
+  <div class="logo">
+    <img
+      src="http://localhost:3000/img/logo.png"
+      style="height: 150px; width: 150px"
+      alt=""
+    />
+  </div>
+    <div class="a" id="links"></div>
+  </div>
+
+<!-- Navigation bar with links -->
+<div class="w3-bar w3-white w3-text-black">
+  
+    <a href="#Contact" class="w3-hide-small w3-bar-item w3-button w3-mobile w3-medium w3-right" style="margin-top:10px;">CONTACT</a>
+  <a href="#Activities" class="w3-hide-small w3-bar-item w3-button w3-mobile w3-medium w3-right" style="margin-top:10px;">ACTIVITIES</a>
+  <a href="#Trainers" class="w3-hide-small w3-bar-item w3-button w3-mobile w3-medium w3-right" style="margin-top:10px;">TRAINERS</a>
+  <a href="#Home" class="w3-hide-small w3-bar-item w3-button w3-mobile w3-medium w3-right" style="margin-top:10px;">HOME</a>
+  <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-medium w3-hide-large" style="margin-top:10px;" onclick="myFunction()">&#9776;</a>
+</div>
+
+<div id="demo" width = "1000px" class="w3-bar-block w3-white w3-hide w3-hide-large w3-small">
+  <a href="#Home" class="w3-bar-item w3-button">HOME</a>
+  <a href="#Trainers" class="w3-bar-item w3-button">TRAINERS</a>
+  <a href="#Activities" class="w3-bar-item w3-button">ACTIVITIES</a>
+  <a href="#Contact" class="w3-bar-item w3-button">CONTACT</a>
+</div>
+    
+
+
+    <h2>Users List</h2>
+    <h5 id="error"></h5>
+    <div class="row p-5">
+      <div class="col-lg-12">
+        <table id="table" class="table table-hover mt-5">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Mobile</th>
+              <th>Role</th>
+              <th>Block</th>
+              <th>Prime</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+
+    <script
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      //create a function that makes a POST request to block or unblock a user
+      function blockUser(id, isBlocked) {
+        //make a post request to the server
+        $.ajax({
+          url: "http://localhost:3000/userr/block",
+          method: "POST",
+          data: {
+            id: id,
+            isBlocked: isBlocked,
+          },
+          success: function (data) {
+            //if the request is successful, reload the page
+            location.reload();
+          },
+          error: function (error) {
+            //if the request is unsuccessful, display an error message
+            $("#error").text(error.responseJSON.message);
+          },
+        });
+      }
+
+      function activatePrime(id, prime) {
+        //make a post request to the server
+        $.ajax({
+          url: "http://localhost:3000/userr/prime",
+          method: "POST",
+          data: {
+            id: id,
+            prime: prime,
+          },
+          success: function (data) {
+            //if the request is successful, reload the page
+            location.reload();
+          },
+          error: function (error) {
+            //if the request is unsuccessful, display an error message
+            $("#error").text(error.responseJSON.message);
+          },
+        });
+      }
+
+      fetch("http://localhost:3000/users/list", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+        .then((res) => {
+          console.log(res);
+          if (res.ok) {
+            return res.json();
+          } else {
+            throw new Error("Something went wrong");
+          }
+        })
+        .catch((err) => {
+          document.getElementById("error").innerHTML =
+            "Invalid email or password";
+        })
+        .then((data) => {
+          //add array of users to table
+          data.forEach((userr) => {
+            var row = document.createElement("tr");
+            var id = document.createElement("td");
+            var name = document.createElement("td");
+            var email = document.createElement("td");
+            var mobile = document.createElement("td");
+            var role = document.createElement("td");
+            var action = document.createElement("td");
+            var block = document.createElement("td");
+            var prime = document.createElement("td");
+
+
+            id.innerHTML = userr.id;
+            name.innerHTML = userr.firstName + " " + userr.lastName;
+            email.innerHTML = userr.email;
+            mobile.innerHTML = userr.mobile;
+            role.innerHTML = userr.role;
+            action.innerHTML = `<a href="http://localhost:3000/users/edit/${userr.id}">Edit</a>`;
+            block.innerHTML = `<button class="btn btn-danger" onclick="blockUser(${
+              userr.id
+            }, ${userr.block === 1 ? 0 : 1} )" >${
+              userr.block === 1 ? "Unblock" : "Block"
+            }</button>`;
+            prime.innerHTML = `<button class="btn btn-danger" onclick="activatePrime(${
+              userr.id
+            }, ${userr.prime === 1 ? 0 : 1} )" >${
+              userr.prime === 1 ? "Deactivate" : "Activate"
+            }</button>`;
+
+            row.appendChild(id);
+            row.appendChild(name);
+            row.appendChild(email);
+            row.appendChild(mobile);
+            row.appendChild(role);
+            row.appendChild(block);
+            row.appendChild(prime);
+
+            document.getElementById("table").appendChild(row);
+          });
+
+          console.log(data);
+        });
+    </script>
+  </body>
+</html>

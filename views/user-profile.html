@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel=“stylesheet” href=“https://www.w3schools.com/w3css/4/w3.css”>
+    <link rel=“stylesheet” href=“https://fonts.googleapis.com/css?family=Roboto”>
+    <link rel=“stylesheet” href=“https://fonts.googleapis.com/css?family=Source Sans Pro”>
+    <link rel=“stylesheet” href=“https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css”>
+
+    <title>Disciple Assistance</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source Sans Pro">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+      html {
+      scroll-behavior: smooth;
+    }
+    h1,h2,h3,h4,h5,h6 {font-family: "Roboto"}
+    body {font-family: "Source Sans Pro"}
+    </style>
+  </head>
+<body class="w3-light-white w3-margin">
+
+
+    <div
+    class="upperHeader"
+    style="display: flex; justify-content: space-between; align-items: center"
+  >
+  <div class="logo">
+    <img
+      src="http://localhost:3000/img/logo.png"
+      style="height: 150px; width: 150px"
+      alt=""
+    />
+  </div>
+    <div class="a" id="links"></div>
+    <script>
+      //check if the user has jwt token
+      if (localStorage.getItem("token")) {
+        //if the user has jwt token, then show the user name
+        document.getElementById(
+          "links"
+        ).innerHTML = `<a href="http://localhost:3000/user-profile" class="link">
+          <img height="40" width="40" src="http://localhost:3000/img/profile.jpg" alt="user" />
+          </a> <a href="http://localhost:3000/post-rentals" class="link">
+          <img height="40" width="40" src="http://localhost:3000/img/add.png" alt="user" />
+          </a>`;
+      } else {
+        //if the user doesn't have jwt token, then show the login button
+        document.getElementById(
+          "links"
+        ).innerHTML = `<a class='btn btn-sm btn-success' href="http://localhost:3000/login">Login</a> <a class='btn btn-sm btn-success' href="http://localhost:3000/register">Register</a>`;
+      }
+    </script>
+  </div>
+
+<!-- Navigation bar with links -->
+<div class="w3-bar w3-white w3-text-black">
+  
+    <a href="#Contact" class="w3-hide-small w3-bar-item w3-button w3-mobile w3-medium w3-right" style="margin-top:10px;">CONTACT</a>
+  <a href="#Activities" class="w3-hide-small w3-bar-item w3-button w3-mobile w3-medium w3-right" style="margin-top:10px;">ACTIVITIES</a>
+  <a href="#Trainers" class="w3-hide-small w3-bar-item w3-button w3-mobile w3-medium w3-right" style="margin-top:10px;">TRAINERS</a>
+  <a href="http://localhost:3000/"  class="w3-hide-small w3-bar-item w3-button w3-mobile w3-medium w3-right" style="margin-top:10px;">HOME</a>
+  <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-medium w3-hide-large" style="margin-top:10px;" onclick="myFunction()">&#9776;</a>
+</div>
+
+<div id="demo" width = "1000px" class="w3-bar-block w3-white w3-hide w3-hide-large w3-small">
+  <a href="http://localhost:3000/" class="w3-bar-item w3-button">HOME</a>
+  <a href="#Trainers" class="w3-bar-item w3-button">TRAINERS</a>
+  <a href="#Activities" class="w3-bar-item w3-button">ACTIVITIES</a>
+  <a href="#Contact" class="w3-bar-item w3-button">CONTACT</a>
+</div>
+
+<form action="" class="form" enctype="multipart/form-data">
+
+  <div class="row">
+      <div class="col-md-3 border-right">
+          <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span class="font-weight-bold">Edogaru</span><span class="text-black-50">edogaru@mail.com.my</span><span> </span></div>
+      </div>
+      <div class="col-md-5 border-right">
+          <div class="p-3 py-5">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                  <h4 class="text-right">Profile Settings</h4>
+              </div>
+              <div class="row mt-2">
+                  <div class="col-md-6"><label  class="labels">First Name</label><input type="text" id ="firstName" class="form-control" placeholder="first name" value=""></div>
+                  <div class="col-md-6"><label class="labels">Last Name</label><input type="text" id ="lastName"  class="form-control" value="" placeholder="surname"></div>
+              </div>
+              <div class="row mt-3">
+                  <div class="col-md-12"><label class="labels">Mobile Number</label><input type="text" id ="mobile" class="form-control" placeholder="enter phone number" value=""></div>
+                  <div class="col-md-12"><label class="labels">Email ID</label><input type="text" id ="email" class="form-control" placeholder="enter email id" value=""></div>
+              </div>
+
+              
+              <button class="btn btn-primary profile-button" type="submit">Save Profile</button>
+            </form>
+              <div class="col-lg-4">
+                  <a href="http://localhost:5000/app/orders" class="btn btn-success">View Orders</a>
+                  <button class="btn btn-danger" id="logout">Logout</button>
+                </div>
+          </div>
+      </div>
+      </div>
+      
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous" ></script> 
+
+  <script>
+    //create a get ajax request with route /user and send the token
+    $.ajax({
+      url: "http://localhost:3000/userr",
+      type: "GET",
+      headers: {
+        Authorization: "Bearer " + localStorage.getItem("token")
+      },
+      success: function(data) {
+        //populate the fields with the data
+        $("#firstName").val(data.firstName);
+        $("#lastName").val(data.lastName);
+        $("#mobile").val(data.mobile);
+        $("#email").val(data.email);
+
+        //$("#profile").attr("src",data.profileImage);
+      }
+    });
+
+
+    //create a post ajax request with route /user and send the token
+    $("form").submit(function(e) {
+      e.preventDefault();
+
+     // var file = image.files[0];
+     // console.log(file);
+      var formData = new FormData()
+      formData.append("firstName", $("#firstName").val());
+      formData.append("lastName", $("#lastName").val());
+      formData.append("mobile",  $("#mobile").val());
+      formData.append("email", $("#email").val());
+      //formData.append("file", file);
+
+      console.log(formData);
+
+      $.ajax({
+        url: "http://localhost:3000/userr/update",
+        type: "POST",
+        headers: {
+          Authorization: "Bearer " + localStorage.getItem("token")
+        },
+        data: formData,
+        contentType: false,
+        processData: false,
+        success: function(data) {
+        window.location.reload();
+        }
+      });
+    });
+
+
+    </script>
+  <script>
+    if (!localStorage.getItem("token")) {
+      window.location.href = "http://localhost:3000/login";
+    }
+  </script>
+
+
+<script>
+//logout function
+$("#logout").click(function() {
+  localStorage.removeItem("token");
+  window.location.href = "http://localhost:3000/login";
+});
+</script>
+
+
+</html>
+
+
+
+
+
+
+
